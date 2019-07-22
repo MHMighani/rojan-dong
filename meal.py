@@ -93,6 +93,17 @@ class AddMeal(QtWidgets.QMainWindow,Ui_MainWindow):
             oldDic[key]["debt"]+=dic[key]
         with open("information.json",'w') as file:
             json.dump(oldDic,file)
+        self.setNewDebts(oldDic)
+
+    #this function sets new debts in the related column
+    def setNewDebts(self,newDic):
+        for key in newDic:
+            debtLabel = self.findChild(QtWidgets.QLabel,key)
+            lineEdit = self.findChild(QtWidgets.QLineEdit,key)
+            checkBox = self.findChild(QtWidgets.QCheckBox,key)
+            debtLabel.setText(str(newDic[key]["debt"]))
+            lineEdit.setText("")
+            checkBox.setChecked(False)
 
 
 

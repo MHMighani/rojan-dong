@@ -17,8 +17,12 @@ class Ui_MainWindow(object):
 "}")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
+        self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
+        self.verticalLayout_2.setObjectName("verticalLayout_2")
+        self.verticalLayout = QtWidgets.QVBoxLayout()
+        self.verticalLayout.setSpacing(40)
+        self.verticalLayout.setObjectName("verticalLayout")
         self.pushButton = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton.setGeometry(QtCore.QRect(140, 30, 200, 50))
         self.pushButton.setMinimumSize(QtCore.QSize(200, 50))
         self.pushButton.setStyleSheet("QPushButton{\n"
 "    background-color:lightgreen;\n"
@@ -30,8 +34,8 @@ class Ui_MainWindow(object):
 "    background-color:green;\n"
 "}")
         self.pushButton.setObjectName("pushButton")
+        self.verticalLayout.addWidget(self.pushButton)
         self.pushButton_2 = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(140, 120, 200, 50))
         self.pushButton_2.setMinimumSize(QtCore.QSize(200, 50))
         self.pushButton_2.setStyleSheet("QPushButton{\n"
 "    background-color:red;\n"
@@ -43,6 +47,21 @@ class Ui_MainWindow(object):
 "    background-color:lightred;\n"
 "}")
         self.pushButton_2.setObjectName("pushButton_2")
+        self.verticalLayout.addWidget(self.pushButton_2)
+        self.pushButton_3 = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_3.setMinimumSize(QtCore.QSize(200, 50))
+        self.pushButton_3.setStyleSheet("QPushButton{\n"
+"    background-color:blue;\n"
+"    color:white;\n"
+"    border:0px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed{\n"
+"    background-color:lightblue;\n"
+"}")
+        self.pushButton_3.setObjectName("pushButton_3")
+        self.verticalLayout.addWidget(self.pushButton_3)
+        self.verticalLayout_2.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
         self.statusbar.setObjectName("statusbar")
@@ -56,6 +75,7 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.pushButton.setText(_translate("MainWindow", "مشارکت کننده جدید"))
         self.pushButton_2.setText(_translate("MainWindow", "وعده جدید"))
+        self.pushButton_3.setText(_translate("MainWindow", "ویرایش مشارکت کنندگان"))
 
 
 if __name__ == "__main__":
