@@ -52,7 +52,7 @@ class editCollaborator(QtWidgets.QMainWindow,Ui_MainWindow):
 
         self.updateCollaborators()
 
-    #Updates scrollArea and collaborators after deleting
+    # Updates scrollArea and collaborators after deleting
     def updateCollaborators(self):
         information = self.getInformationDic(self.infoDicName)
 

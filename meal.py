@@ -78,6 +78,7 @@ class AddMeal(QtWidgets.QMainWindow,Ui_MainWindow):
                 listOfCollaborators[key] = value
         numOfCollaborators = len(listOfCollaborators)
 
+        self.saveMealInformation(listOfCollaborators)
         print(listOfCollaborators)
 
         for key in listOfCollaborators:
@@ -104,6 +105,21 @@ class AddMeal(QtWidgets.QMainWindow,Ui_MainWindow):
             debtLabel.setText(str(newDic[key]["debt"]))
             lineEdit.setText("")
             checkBox.setChecked(False)
+
+    def saveMealInformation(self,listOfCollaborators):
+        if "MealInformation.txt" not in os.listdir():
+            with open("MealInformation.txt","w") as file:
+                for key in listOfCollaborators:
+                    state = key + "\t" + str(listOfCollaborators[key])
+                    file.write(state)
+                    file.write("\n")
+        else:
+            with open("MealInformation.txt","a") as file:
+                file.write("\n"+"*"*100+"\n")
+                for key in listOfCollaborators:
+                    state = key + "\t" + str(listOfCollaborators[key])
+                    file.write(state)
+                    file.write("\n")
 
 
 
